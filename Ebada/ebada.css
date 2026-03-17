@@ -1,0 +1,413 @@
+/* nav Start  */
+
+.navbar-nav .nav-link {
+    transition: all 0.3s ease-in-out;
+    border: 1px solid transparent;
+}
+
+.navbar-nav .nav-link:hover:not(.active) {
+    color: #0d6efd !important;
+    background-color: #f0f8ff; 
+    transform: translateY(-2px);
+    border-radius: 50px;
+}
+
+.navbar-brand img {
+    transition: transform 0.4s;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* nav media query  */
+
+@media (max-width: 991px) {
+    .custom-offcanvas {
+        width: 50% !important; 
+        min-width: 250px;
+    }
+    
+    /* سنترة اللينكات عمودياً وأفقياً داخل الـ Offcanvas */
+    .offcanvas-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* سنترة Y */
+        align-items: center;    /* سنترة X */
+        text-align: center;
+    }
+
+    .navbar-nav {
+        width: 100%;
+    }
+
+    .nav-item {
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-nav {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.navbar-nav .nav-link:hover:not(.active) {
+    color: #0d6efd !important;
+    background-color: #f0f8ff;
+    transform: scale(1.1);
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+/* nav bar end --------------------- */
+
+/* hero Start --------------------------- */
+
+.hero-section {
+    background: url('../Styles/Photos/c4.webp') ;
+    background-position: start;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* تأثير Parallax بسيط */
+}
+
+.text-info {
+    color: #0dcaf0 !important;
+}
+
+.btn-info {
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
+}
+
+.tracking-widest {
+    letter-spacing: 3px;
+}
+
+.bounce-ani {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+}
+
+.btn-info:hover {
+    background-color: #0baccc;
+    transform: translateY(-3px);
+    transition: 0.3s;
+}
+
+/* hero end  -----------------------------*/
+
+/* second start*-*********************** */
+
+.tracking-widest { letter-spacing: 3px; }
+
+/* تأثيرات الهوفر للدواير الزرقاء */
+.icon-circle {
+    width: 90px;
+    height: 90px;
+    background-color: #0dcaf0; /* اللون اللبني المعتمد */
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(13, 202, 240, 0.2);
+    transition: all 0.4s ease-in-out;
+}
+
+/* لون الـ Info الموحد */
+.text-info {
+    color: #0dcaf0 !important;
+}
+
+.btn-info {
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
+}
+
+.fw-black { font-weight: 900 !important; }
+
+/* second start ------------------------ */
+
+/* section three start  */
+
+.card-flip {
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* حركة ناعمة جداً */
+    border: 1px solid rgba(13, 202, 240, 0.1);
+}
+
+/* لما الماوس ييجي على الكارد */
+.col-lg-3:hover .card-flip {
+    transform: rotateY(360deg); /* الدوران حول المحور الرأسي */
+    box-shadow: 0 15px 35px rgba(13, 202, 240, 0.2) !important; /* ظل يفتح النفس */
+}
+
+/* حركة بسيطة للأيقونة عند الهوفر */
+.card-flip:hover .icon-circle i {
+    transform: scale(1.1) rotate(-10deg);
+    transition: 0.4s 0.2s; /* تأخير خفيف عشان يبان */
+}
+
+/* المحتوى الشفاف داخل الكارت */
+/* الخلفية ثابتة وزجاجية */
+.services-section {
+    background: url('https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=1500&q=80') no-repeat center center / cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.services-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(13, 202, 240, 0.45));
+    z-index: 1;
+}
+
+/* ستايل الكارد */
+.service-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 380px; /* توحيد الطول عشان الشكل يبقا مسطرة */
+}
+
+.service-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+    transition: all 0.6s ease;
+}
+
+/* تأثير الزجاج السفلي */
+.service-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s ease;
+}
+
+/* حركة الهوفر */
+.service-card:hover {
+    transform: translateY(-15px);
+    border-color: #0dcaf0;
+}
+
+.service-card:hover img {
+    transform: scale(1.15);
+    filter: brightness(0.8);
+}
+
+.service-card:hover .service-content {
+    background: rgba(13, 202, 240, 0.9); /* اللون اللبني اللي بيفتح النفس */
+}
+
+.service-card:hover .service-content h5, 
+.service-card:hover .service-content p {
+    color: #fff !important;
+}
+
+.service-card:hover .btn-outline-info {
+    border-color: #fff;
+    color: #fff;
+}
+
+/* section three End  */
+
+/* section four start  */
+
+/* تنسيق سيكشن الآراء */
+.testimonial-card {
+    transition: transform 0.4s ease;
+    border-right: 1px solid rgba(0,0,0,0.05);
+    border-left: 1px solid rgba(0,0,0,0.05);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+/* تعديل شكل مؤشرات التنقل */
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+/* تحسين شكل الصور الرمزية (Avatars) */
+.avatar div {
+    box-shadow: 0 4px 10px rgba(13, 202, 240, 0.2);
+}
+
+/* لون النجوم */
+.text-warning {
+    color: #ffc107 !important;
+}
+
+/* section four end  */
+
+/* section five start  */
+
+/* تنسيق سيكشن التواصل */
+.contact-info-card {
+    border-left: 5px solid #0dcaf0 !important;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #fff !important;
+    border: 1px solid #0dcaf0 !important;
+    box-shadow: 0 0 10px rgba(13, 202, 240, 0.1) !important;
+}
+
+.text-ltr {
+    direction: ltr;
+    display: inline-block;
+}
+
+/* حركة بسيطة للأيقونات */
+.icon-box {
+    transition: all 0.3s ease;
+}
+
+.contact-info-card div:hover .icon-box {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.btn-info {
+    transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+    background-color: #0baccc !important;
+    transform: translateY(-2px);
+}
+
+/* section five end  */
+
+/* footer start  */
+
+/* تنسيق الفوتر */
+footer {
+    border-top: 4px solid #0dcaf0;
+}
+
+.footer-links a {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #0dcaf0 !important;
+    transform: translateX(-5px); /* حركة خفيفة لليمين عشان العربي */
+}
+
+.hover-info:hover {
+    color: #0dcaf0 !important;
+    opacity: 1 !important;
+}
+
+.text-ltr {
+    direction: ltr;
+    display: inline-block;
+}
+
+/* تنسيق زر الواتساب في الفوتر */
+.btn-outline-success {
+    border-color: #25d366 !important;
+    color: #25d366 !important;
+}
+
+.btn-outline-success:hover {
+    background-color: #25d366 !important;
+    color: white !important;
+}
+
+/* footer start  */
+
+/* تنسيق زر الواتساب العائم */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px; /* خليه يمين عشان الموقع عربي */
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999; /* عشان يفضل فوق كل العناصر */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* حركة النبض (Pulse) لجذب الانتباه */
+.whatsapp-float::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #25d366;
+    border-radius: 50%;
+    z-index: -1;
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+/* نص ترحيبي يظهر بجانب الزر (Tooltip) */
+.whatsapp-float .tooltip-text {
+    visibility: hidden;
+    width: 100px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    right: 125%; /* يظهر على يسار الزر */
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.whatsapp-float:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* تعديل مكانه في الموبايل عشان مياخدش مساحة كبيرة */
+@media screen and (max-width: 767px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+    }
+}
