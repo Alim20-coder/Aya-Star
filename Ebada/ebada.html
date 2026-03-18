@@ -18,57 +18,49 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top py-3 shadow-lg border-bottom border-info border-2">
-  <div class="container">
+  <div class="container-fluid px-md-5"> 
     <a class="navbar-brand d-flex align-items-center gap-2" href="#">
       <div class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow" style="width: 55px; height: 55px;">
         <i class="fas fa-bug text-dark fs-3"></i>
       </div>
-      <div class="d-flex flex-column lh-1">
+      <div class="d-flex flex-column lh-1 mx-2">
         <span class="h4 fw-black mb-0 text-white">AYA <span class="text-info">STAR</span></span>
         <span id="navBrandSub" class="small fw-bold text-uppercase tracking-widest text-white-50" style="font-size: 10px;">Pest Control</span>
       </div>
     </a>
 
-    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="d-flex align-items-center gap-2">
+      <button id="langSwitcher" class="btn btn-outline-info btn-sm rounded-pill px-3 fw-bold lang-btn">English</button>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
 
-    <div class="offcanvas offcanvas-start bg-dark text-white custom-offcanvas" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-start bg-dark text-white custom-offcanvas" tabindex="-1" id="offcanvasNavbar">
       <div class="offcanvas-header border-bottom border-secondary">
-        <h5 class="offcanvas-title fw-bold text-white" id="offcanvasNavbarLabel">AYA <span class="text-info">STAR</span></h5>
-        <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h5 class="offcanvas-title fw-bold text-white">AYA <span class="text-info">STAR</span></h5>
+        <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"></button>
       </div>
       
       <div class="offcanvas-body">
-        <ul class="navbar-nav w-100 justify-content-lg-between align-items-lg-center px-lg-3"> 
+        <ul class="navbar-nav w-100 justify-content-lg-between align-items-lg-center"> 
           <li class="nav-item"><a id="navHome" class="nav-link active rounded-pill px-3" href="#hero">الرئيسية</a></li>
           <li class="nav-item"><a id="navAbout" class="nav-link px-3" href="#about">من نحن</a></li>
           <li class="nav-item"><a id="navServices" class="nav-link px-3" href="#services">خدمات المكافحة</a></li>
-          
           <li class="nav-item">
             <a class="btn btn-info rounded-pill px-3 fw-bold shadow-sm d-flex align-items-center justify-content-center gap-2 text-white" href="../index.html">
               <i class="fas fa-broom"></i> <span id="navCleanBtn">قسم النظافة</span>
             </a>
           </li>
-
           <li class="nav-item">
             <a class="btn btn-outline-info rounded-pill px-3 fw-bold shadow-sm d-flex align-items-center justify-content-center gap-2" href="./ebada.html">
               <i class="fas fa-bug"></i> <span id="navPestBtn">قسم الإبادة</span>
             </a>
           </li>
-
           <li class="nav-item"><a id="navReviews" class="nav-link px-3" href="#reviews">آراء العملاء</a></li>
           <li class="nav-item"><a id="navContact" class="nav-link px-3" href="#contact">طلب معاينة</a></li>
-          
-          <li class="nav-item d-lg-none mt-3">
-             <button class="btn btn-outline-info w-100 rounded-pill langSwitcherMobile"id="langSwitcher" >English</button>
-          </li>
         </ul>
       </div>
-    </div>
-
-    <div class="d-none d-lg-block ms-3">
-        <button id="langSwitcher" class="btn btn-outline-info btn-sm rounded-pill px-3 fw-bold">English</button>
     </div>
   </div>
 </nav>

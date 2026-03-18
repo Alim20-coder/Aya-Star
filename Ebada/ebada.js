@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const myCarousel = document.querySelector('#testimonialCarousel');
     const contactForm = document.querySelector('form');
     const smoothLinks = document.querySelectorAll('a[href^="#"]');
-    const langSwitcher = document.getElementById('langSwitcher');
+    const langSwitcher = document.getElementsByClassName('langSwitcher');
 
     const savedLang = localStorage.getItem('preferredLang') || 'ar';
     switchLanguage(savedLang);

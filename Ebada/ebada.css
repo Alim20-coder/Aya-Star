@@ -14,6 +14,8 @@ html, body {
 }
 
 .navbar {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -36,21 +38,29 @@ html, body {
     color: #000 !important;
     font-weight: bold;
 }
-
 @media (min-width: 992px) {
     .navbar-nav {
-        width: 100%;
+        width: 100% !important;
         display: flex !important;
-        justify-content: space-between !important;
-        align-items: center;
-        gap: 10px;
+        /* "space-evenly" هي اللي هتخلي المسافات بينهم وبين بعض متساوية بالملي */
+        justify-content: space-evenly !important; 
+        align-items: center !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
     
     .navbar-nav .nav-item {
-        flex: 1;
+        /* شيلنا flex: 1 عشان العناصر متبقاش ضخمة وتفرش زيادة */
+        flex: none !important; 
         text-align: center;
     }
+
+    /* إضافة مسافة بسيطة بين اللوجو وأول عنصر، وبين آخر عنصر والزرار */
+    .navbar-nav {
+        padding: 0 20px !important;
+    }
 }
+
 
 @media (max-width: 991px) {
     .custom-offcanvas {
