@@ -1,59 +1,81 @@
 /* nav Start  */
-
+/* Navbar Custom Styles */
 .navbar-nav .nav-link {
     transition: all 0.3s ease-in-out;
     border: 1px solid transparent;
+    white-space: nowrap; /* عشان الكلام م ينزلش سطر جديد في الشاشات المتوسطة */
 }
 
+/* حالة الـ Hover */
 .navbar-nav .nav-link:hover:not(.active) {
-    color: #0d6efd !important;     background-color: #f0f8ff; 
-    transform: translateY(-2px); border-radius: 50px;
+    color: #0d6efd !important;
+    background-color: #f0f8ff;
+    transform: translateY(-3px) scale(1.05); /* حركة لفوق مع تكبير بسيط */
+    border-radius: 50px;
 }
 
+/* أنيميشن اللوجو */
 .navbar-brand img {
-    transition: transform 0.4s;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
 .navbar-brand:hover img {
     transform: scale(1.1) rotate(10deg);
 }
-/* nav media query  */
+
+/* زر تغيير اللغة */
+#langSwitcher {
+    transition: 0.3s;
+    font-size: 0.9rem;
+    border-width: 2px;
+}
+
+#langSwitcher:hover {
+    background-color: #0dcaf0;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* === Media Queries === */
 
 @media (max-width: 991px) {
     .custom-offcanvas {
-        width: 50% !important; 
-        min-width: 250px;
+        width: 70% !important; /* خليناه 70% عشان يكون أوضح في الموبايل */
+        min-width: 280px;
     }
     
-    /* سنترة اللينكات عمودياً وأفقياً داخل الـ Offcanvas */
     .offcanvas-body {
         display: flex;
         flex-direction: column;
-        justify-content: center; /* سنترة Y */
-        align-items: center;    /* سنترة X */
+        justify-content: center; 
+        align-items: center; 
         text-align: center;
+        padding: 2rem 0;
     }
 
     .navbar-nav {
         width: 100%;
+        gap: 10px; /* مسافة بين اللينكات في الموبايل */
     }
 
     .nav-item {
-        margin-bottom: 15px;    }
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    /* منع الـ Hover من تغيير الحجم بشكل مزعج في اللمس */
+    .navbar-nav .nav-link:hover:not(.active) {
+        transform: none;
+    }
 }
 
 @media (min-width: 992px) {
     .navbar-nav {
         display: flex;
         align-items: center;
+        gap: 5px; /* مسافة متناسقة بين العناصر */
     }
-}
-
-.navbar-nav .nav-link:hover:not(.active) {
-    color: #0d6efd !important;
-    background-color: #f0f8ff;
-    transform: scale(1.1);
-    border-radius: 50px;
-    transition: 0.3s;
+    
 }
 /* nav bar end --------------------- */
 /* hero Start --------------------------- */
@@ -274,116 +296,128 @@
 
 /* footer start  */
 /* تنسيق الفوتر */
+/* الحدود العلوية للفوتر */
 footer {
     border-top: 4px solid #0dcaf0;
 }
 
+/* تنسيق روابط القائمة السريعة */
 .footer-links a {
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
     display: inline-block;
 }
 
 .footer-links a:hover {
     color: #0dcaf0 !important;
-    transform: translateX(-5px); /* حركة خفيفة لليمين عشان العربي */
+    transform: translateX(-8px); /* حركة لليمين بسيطة تناسب القوائم العربية */
 }
 
-.hover-info:hover {
-    color: #0dcaf0 !important;
-    opacity: 1 !important;
+/* تنسيق توقيع المصمم GMTWeb */
+.custom-design-link {
+    transition: all 0.3s ease-in-out;
+    border-bottom: 1px solid rgba(13, 202, 240, 0.2);
 }
 
+.custom-design-link:hover {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(13, 202, 240, 0.6);
+    transform: scale(1.05);
+    display: inline-block;
+}
+
+/* اتجاه الأرقام من اليسار لليمين */
 .text-ltr {
     direction: ltr;
     display: inline-block;
 }
 
-/* تنسيق زر الواتساب في الفوتر */
+/* تنسيق زر الواتساب (Success) */
 .btn-outline-success {
     border-color: #25d366 !important;
     color: #25d366 !important;
+    transition: all 0.4s ease;
 }
 
 .btn-outline-success:hover {
     background-color: #25d366 !important;
     color: white !important;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+/* لمسة جمالية للـ HR */
+hr.opacity-10 {
+    background-color: #ffffff;
+    opacity: 0.1 !important;
 }
 /* footer start  */
 
 /* تنسيق زر الواتساب العائم */
-.whatsapp-float {
+/* تنسيق مشترك للأيقونات العائمة */
+.whatsapp-float, .phone-float {
     position: fixed;
+    right: 30px;
     width: 60px;
     height: 60px;
-    bottom: 40px;
-    right: 40px; /* خليه يمين عشان الموقع عربي */
-    background-color: #25d366;
     color: #FFF;
     border-radius: 50px;
     text-align: center;
     font-size: 30px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 9999; /* عشان يفضل فوق كل العناصر */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: 1000;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-/* حركة النبض (Pulse) لجذب الانتباه */
-.whatsapp-float::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
+/* مكان أيقونة الواتساب (بالأسفل) */
+.whatsapp-float {
+    bottom: 30px;
     background-color: #25d366;
-    border-radius: 50%;
-    z-index: -1;
-    animation: pulse-green 2s infinite;
 }
 
-@keyframes pulse-green {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+/* مكان أيقونة الهاتف (فوق الواتساب) */
+.phone-float {
+    bottom: 100px; /* مسافة كافية ليكون فوق الواتساب */
+    background-color: #0dcaf0; /* لون الـ Info الخاص ببوتستراب */
 }
 
-.whatsapp-float:hover {
-    background-color: #128c7e;
-    color: #fff;
-    transform: translateY(-5px);
+/* تأثير عند تمرير الماوس */
+.whatsapp-float:hover, .phone-float:hover {
+    color: #FFF;
+    transform: scale(1.1) rotate(10deg);
 }
 
-/* نص ترحيبي يظهر بجانب الزر (Tooltip) */
-.whatsapp-float .tooltip-text {
+/* تنسيق الـ Tooltip (النص الذي يظهر عند الوقوف) */
+.tooltip-text {
     visibility: hidden;
-    width: 100px;
+    width: 90px;
     background-color: #333;
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 5px 0;
+    padding: 5px;
     position: absolute;
     z-index: 1;
-    right: 125%; /* يظهر على يسار الزر */
+    right: 125%; /* يظهر على يسار الأيقونة */
     font-size: 14px;
     opacity: 0;
     transition: opacity 0.3s;
 }
 
-.whatsapp-float:hover .tooltip-text {
+.whatsapp-float:hover .tooltip-text, .phone-float:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
 }
 
-/* تعديل مكانه في الموبايل عشان مياخدش مساحة كبيرة */
-@media screen and (max-width: 767px) {
-    .whatsapp-float {
+/* إخفاء الـ Tooltip في الموبايل لعدم الزحام */
+@media (max-width: 768px) {
+    .tooltip-text {
+        display: none;
+    }
+    .whatsapp-float, .phone-float {
         width: 50px;
         height: 50px;
-        bottom: 20px;
-        right: 20px;
         font-size: 25px;
+        right: 20px;
     }
+    .phone-float { bottom: 85px; }
 }
